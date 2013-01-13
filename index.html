@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PhoneGapDemo</title>
+		<link rel="stylesheet" href="css/simple.css">
+		<!-- include the Tools -->
+		<script src="js/jQueryTools.js"></script>
+		<script src="cordova-2.3.0.js"></script>
+		<script src="js/fastclick.js"></script>
+		<link rel="stylesheet" href="css/tabs.css"
+		type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/tabs-panes.css"
+		type="text/css" media="screen" />
+
+		<script>
+			function onLoad() {
+				document.addEventListener("deviceready", onDeviceReady, true);
+				initFastButtons();
+			}
+
+			function onDeviceReady() {
+				// navigator.notification.alert("PhoneGap is working!!");
+			}
+		</script>
+	</head>
+	<body onload="onLoad();">
+		<span id="fastclick"> <h1>PhoneGap - Tab demonstration</h1> <h2>This is just an html page with a css style sheet and some very simple JS calls.</h2>
+			<ul class="tabs">
+				<li>
+					<a class="s" href="#">Tab 1</a>
+				</li>
+				<li>
+					<a class="s" href="#">Tab 2</a>
+				</li>
+				<li>
+					<a class="s" href="#">Tab 3</a>
+				</li>
+			</ul> <!-- tab "panes" -->
+			<div class="panes">
+				<div>
+					First tab content.
+				</div>
+				<div>
+					Second tab content
+				</div>
+				<div>
+					Third tab content
+				</div>
+			</div>
+			<script>
+				// perform JavaScript after the document is scriptable.
+				$(function() {
+					// setup ul.tabs to work as tabs for each div directly under div.panes
+					$("ul.tabs").tabs("div.panes > div");
+				});
+			</script> </span><!-- end fastclick -->
+	</body>
+</html>
